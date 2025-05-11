@@ -1,0 +1,150 @@
+/* ===== Base ===== */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f5f6f7;
+  display: flex;
+}
+
+/* ===== Sidebar (fixa à esquerda) ===== */
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background-color: #4f46e5;
+  color: white;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sidebar a {
+  color: #e0e7ff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.sidebar a:hover {
+  background-color: #6366f1;
+  color: white;
+}
+
+/* ===== Conteúdo principal ===== */
+.content {
+  margin-left: 220px; /* espaço para a sidebar */
+  flex: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* ===== Título ===== */
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 28px;
+}
+
+/* ===== Botão voltar (caso use) ===== */
+.voltar {
+  display: block;
+  margin-bottom: 20px;
+  color: #6b46c1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ===== Calendário ===== */
+#calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  max-width: 500px;
+  margin-bottom: 30px;
+}
+
+.day, .empty {
+  background-color: white;
+  padding: 15px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  color: #333;
+  text-align: center;
+  font-weight: 500;
+}
+
+.weekday {
+  font-weight: bold;
+  color: #555;
+  text-align: center;
+}
+
+/* Dias marcados */
+.day.marked,
+.day-cell.completed {
+  background-color: #a3e635; /* verde limão */
+  color: #000;
+  font-weight: bold;
+  border: 2px solid #6b46c1;
+}
+
+/* Impede clique nos dias */
+#calendar .day {
+  pointer-events: none;
+}
+
+/* ===== Botão de check-in ===== */
+#checkin-btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  background: linear-gradient(to right, #6b46c1, #9f7aea);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#checkin-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.main-content {
+  margin-left: 180px; /* para compensar a sidebar fixa */
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centraliza horizontalmente */
+  text-align: center;
+}
+
+.main-content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#calendar {
+  margin-left: 100px; /* ajuste fino */
+}

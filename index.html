@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>My Tasks</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <h2>🎓 Scholarships</h2>
+    <nav>
+      <a href="index.html"><i class="fas fa-tasks"></i> Tasks</a>
+      <a href="editais.html"><i class="fas fa-file-alt"></i> Applications</a>
+      <a href="concluidos.html"><i class="fas fa-check-circle"></i> Completed</a>
+      <a href="calendario.html"><i class="fas fa-calendar-alt"></i> Calendar</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <div class="header">
+      <h1><span class="emoji">🗂️</span> My Tasks</h1>
+      <button id="add-task-btn"><i class="fas fa-plus"></i> New Task</button>
+    </div>
+
+    <div id="new-task-form" style="display: none;">
+      <input type="text" id="task-name-input" placeholder="Nome da tarefa">
+      <input type="date" id="task-deadline-input">
+      <button id="save-task-btn">Add</button>
+    </div>
+
+    <div class="summary">
+      <p>Total Tasks: <span id="total-tasks">0</span></p>
+      <p>Completed Tasks: <span id="completed-tasks">0</span></p>
+      <p>Progress Overview: <span id="average-progress">0%</span></p>
+    </div>
+
+    <div id="task-list" class="task-list">
+      <!-- Tarefas serão adicionadas aqui via JavaScript -->
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Progress Calendar</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="calendar.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <h2>🎓 Scholarships</h2>
+    <nav>
+      <a href="index.html"><i class="fas fa-tasks"></i> Tasks</a>
+      <a href="editais.html"><i class="fas fa-file-alt"></i> Applications</a>
+      <a href="concluidos.html"><i class="fas fa-check-circle"></i> Completed</a>
+      <a href="calendario.html"><i class="fas fa-calendar-alt"></i> Calendar</a>
+    </nav>
+  </aside>
+
+  <!-- Container principal centralizado -->
+  <main class="content">
+    <div class="main-content">
+      <h1>Progress Calendar</h1>
+      <div id="calendar"></div>
+      <button id="checkin-btn">Check-in</button>
+    </div>
+  </main>
+
+  <script src="calendar.js"></script>
+</body>
+</html>
