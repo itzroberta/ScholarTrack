@@ -58,7 +58,7 @@ const checkinBtn = document.getElementById("checkin-btn");
 const alreadyCheckedIn = localStorage.getItem(todayKey) === "true";
 
 if (alreadyCheckedIn) {
-  checkinBtn.textContent = "✅ Check-in feito";
+  checkinBtn.textContent = "✅ Check-in Done";
   checkinBtn.disabled = true;
   checkinBtn.style.opacity = 0.6;
   checkinBtn.style.cursor = "default";
@@ -67,7 +67,7 @@ if (alreadyCheckedIn) {
     localStorage.setItem(todayKey, "true");
     renderCalendar();
 
-    checkinBtn.textContent = "✅ Check-in feito";
+    checkinBtn.textContent = "✅ Check-in Done";
     checkinBtn.disabled = true;
     checkinBtn.style.opacity = 0.6;
     checkinBtn.style.cursor = "default";
