@@ -6,7 +6,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
   <style>
     /* Estilo do modal */
@@ -55,11 +54,25 @@
       <button id="add-task-btn"><i class="fas fa-plus"></i> New Task</button>
     </div>
 
+    <div class="task-filter">
+        <label for="filter-tasks">Order by:</label>
+        <select id="filter-tasks">
+          <option value="default">Standard</option>
+          <option value="priority">Priority</option>
+          <option value="deadline">Deadline</option>
+        </select>
+    </div>
+
     <div id="new-task-form" style="display: none;">
       <input type="text" id="task-name-input" placeholder="Nome da tarefa">
       <input type="date" id="task-deadline-input">
       <button type="button" id="open-edit-note-modal" class="btn btn-secondary">Click to add notes</button>
       <input type="hidden" id="edit-task-note" name="note"> <!-- aqui ficará o texto salvo -->
+      <select id="task-priority-input">
+        <option value="1">High</option>
+        <option value="2">Medium</option>
+        <option value="3">Low</option>
+      </select>
       <button id="save-task-btn">Adicionar</button>
     </div>
 
@@ -78,14 +91,14 @@
   <div id="note-modal" class="modal" style="display: none;">
     <div class="modal-content">
       <span id="close-modal" class="close">&times;</span>
-      <h2>Anotações da Tarefa</h2>
+      <h2>Task's notes</h2>
       <p id="modal-note-content"></p>
     </div>
   </div>
 
-  <div id="edit-note-modal">
+  <div id="edit-note-modal" class="modal" style="display: none;">
     <div class="modal-content">
-      <button id="close-edit-modal">×</button>
+      <span id="close-edit-modal" class="close">&times;</span>
       <h2>Add Notes</h2>
       <textarea id="edit-note-textarea" rows="10" style="width: 100%; resize: vertical;"></textarea>
       <br>

@@ -21,36 +21,41 @@ addTaskBtn.addEventListener('click', () => {
 saveTaskBtn.addEventListener('click', () => {
     const taskNameInput = document.getElementById('task-name-input');
     const taskDeadlineInput = document.getElementById('task-deadline-input');
-    const taskNoteInput = document.getElementById('edit-task-note'); // corrigido
+    const taskNoteInput = document.getElementById('edit-task-note');
+    const taskPriorityInput = document.getElementById('task-priority-input');
 
     const taskName = taskNameInput.value.trim();
     const taskDeadline = taskDeadlineInput.value;
     const taskNote = taskNoteInput.value.trim();
+    const taskPriority = taskPriorityInput.value;
 
     if (taskName === '' || taskDeadline === '') {
-        alert('Preencha o nome da tarefa e o prazo!');
+        alert('Fill in the name of the task and deadline!');
         return;
     }
 
-    createTask(taskName, taskDeadline, 0, taskNote);
+    createTask(taskName, taskDeadline, 0, taskNote, taskPriority);
     registrarProgressoDiario();
     saveTasks();
 
     taskNameInput.value = '';
     taskDeadlineInput.value = '';
     taskNoteInput.value = '';
+    taskPriorityInput.value = 'medium';
     newTaskForm.style.display = 'none';
 });
 
-function createTask(taskName, taskDeadline, progress, note = '') {
+function createTask(taskName, taskDeadline, progress, note = '', priority = 'medium') {
     const taskList = document.querySelector('.task-list');
 
     const newTaskItem = document.createElement('div');
     newTaskItem.className = 'task-item';
+    newTaskItem.dataset.priority = priority;
     newTaskItem.innerHTML = `
         <div class="task-info">
             <span class="task-name">${taskName}</span>
             <span class="task-deadline">${taskDeadline}</span>
+            <span class="task-priority">Priority: ${priority}</span>
         </div>
         <div class="progress-container">
             <div class="progress-bar">
@@ -62,9 +67,9 @@ function createTask(taskName, taskDeadline, progress, note = '') {
             </div>
         </div>
         <div class="task-actions">
-            <button class="note-btn">📝 Ver anotações</button>
-            <button class="edit-btn">✏️</button>
-            <button class="delete-btn">🗑️</button>
+            <button class="note-btn">📝 See Notes</button>
+            <button class="edit-btn">✏️ Edit</button>
+            <button class="delete-btn">🗑️ Delete</button>
         </div>
     `;
 
@@ -102,9 +107,7 @@ function activateProgressButtons(taskItem) {
         reorderTasks();
         registrarProgressoDiario();
 
-        // 🎉 Dispara confetes apenas se acabou de atingir 100%
         if (current === 100 && wasNotComplete) {
-            console.log("Disparar confetes!");
             dispararConfetes();
         }
     });
@@ -118,6 +121,7 @@ function activateActions(taskItem) {
     editBtn.addEventListener('click', () => {
         const taskNameSpan = taskItem.querySelector('.task-name');
         const taskDeadlineSpan = taskItem.querySelector('.task-deadline');
+        const taskPrioritySpan = taskItem.querySelector('.task-priority');
 
         const taskNameInput = document.createElement('input');
         taskNameInput.type = 'text';
@@ -129,14 +133,23 @@ function activateActions(taskItem) {
         taskDeadlineInput.value = taskDeadlineSpan.innerText;
         taskDeadlineInput.className = 'edit-input';
 
+        const prioritySelect = document.createElement('select');
+        prioritySelect.innerHTML = `
+            <option value="high">high</option>
+            <option value="medium">medium</option>
+            <option value="low">low</option>
+        `;
+        prioritySelect.value = taskItem.dataset.priority || 'medium';
+
         const noteButton = document.createElement('button');
-        noteButton.textContent = '📝 Editar anotação';
+        noteButton.textContent = '📝 Edit Notes';
         noteButton.className = 'edit-note-btn';
 
         const taskInfo = taskItem.querySelector('.task-info');
         taskInfo.innerHTML = '';
         taskInfo.appendChild(taskNameInput);
         taskInfo.appendChild(taskDeadlineInput);
+        taskInfo.appendChild(prioritySelect);
         taskInfo.appendChild(noteButton);
 
         let temporaryNote = taskItem.dataset.note || '';
@@ -145,7 +158,6 @@ function activateActions(taskItem) {
             document.getElementById('edit-note-textarea').value = temporaryNote;
             document.getElementById('edit-note-modal').style.display = 'flex';
 
-    // Salvar temporariamente
             document.getElementById('save-note-edit').onclick = () => {
                 temporaryNote = document.getElementById('edit-note-textarea').value;
                 document.getElementById('edit-note-modal').style.display = 'none';
@@ -156,30 +168,34 @@ function activateActions(taskItem) {
         actionsContainer.innerHTML = '';
 
         const saveEditBtn = document.createElement('button');
-        saveEditBtn.innerText = 'Salvar';
+        saveEditBtn.innerText = 'Save';
         saveEditBtn.className = 'save-btn';
         actionsContainer.appendChild(saveEditBtn);
 
         saveEditBtn.addEventListener('click', () => {
             const updatedName = taskNameInput.value.trim();
             const updatedDeadline = taskDeadlineInput.value;
+            const updatedPriority = prioritySelect.value;
             const updatedNote = temporaryNote.trim();
 
             if (updatedName === '' || updatedDeadline === '') {
-                alert('Preencha o nome e o prazo!');
+                alert('Fill in the name and deadline!');
                 return;
             }
+
+            taskItem.dataset.priority = updatedPriority;
+            taskItem.dataset.note = updatedNote;
 
             taskInfo.innerHTML = `
                 <span class="task-name">${updatedName}</span>
                 <span class="task-deadline">${updatedDeadline}</span>
+                <span class="task-priority">Priority: ${updatedPriority}</span>
             `;
-            taskItem.dataset.note = updatedNote;
 
             actionsContainer.innerHTML = `
-                <button class="note-btn">📝 Ver anotações</button>
-                <button class="edit-btn">✏️</button>
-                <button class="delete-btn">🗑️</button>
+                <button class="note-btn">📝 See notes</button>
+                <button class="edit-btn">✏️ Edit</button>
+                <button class="delete-btn">🗑️ Delete</button>
             `;
             activateActions(taskItem);
             saveTasks();
@@ -189,7 +205,7 @@ function activateActions(taskItem) {
     });
 
     deleteBtn.addEventListener('click', () => {
-        if (confirm('Tem certeza que deseja excluir esta tarefa?')) {
+        if (confirm('Are you sure you want to delete this task?')) {
             taskItem.remove();
             saveTasks();
             updateSummary();
@@ -197,7 +213,7 @@ function activateActions(taskItem) {
     });
 
     noteBtn?.addEventListener('click', () => {
-        const noteText = taskItem.dataset.note || 'Sem anotações.';
+        const noteText = taskItem.dataset.note || '';
         showNoteModal(noteText);
     });
 }
@@ -208,7 +224,6 @@ function showNoteModal(noteText) {
     content.textContent = noteText || 'Sem anotações.';
     modal.style.display = 'block';
 
-    // Fechar ao clicar fora
     window.onclick = function (event) {
         if (event.target === modal) {
             modal.style.display = 'none';
@@ -226,8 +241,9 @@ function saveTasks() {
         const name = task.querySelector('.task-name')?.textContent || '';
         const deadline = task.querySelector('.task-deadline')?.textContent || '';
         const note = task.dataset.note || '';
+        const priority = task.dataset.priority || 'medium';
         const progress = parseInt(task.querySelector('.progress-fill').style.width) || 0;
-        tasks.push({ name, deadline, progress, note });
+        tasks.push({ name, deadline, progress, note, priority });
     });
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
@@ -238,7 +254,7 @@ function loadTasks() {
 
     tasks.forEach(task => {
         if (!onlyCompleted || task.progress === 100) {
-            createTask(task.name, task.deadline, task.progress, task.note || '');
+            createTask(task.name, task.deadline, task.progress, task.note || '', task.priority);
         }
     });
 }
@@ -275,19 +291,16 @@ function reorderTasks() {
     });
 }
 
-// Abrir modal de edição
 document.getElementById('open-edit-note-modal').addEventListener('click', () => {
     const note = document.getElementById('edit-task-note').value;
     document.getElementById('edit-note-textarea').value = note;
     document.getElementById('edit-note-modal').style.display = 'flex';
 });
 
-// Fechar modal de edição
 document.getElementById('close-edit-modal').addEventListener('click', () => {
     document.getElementById('edit-note-modal').style.display = 'none';
 });
 
-// Salvar nota editada
 document.getElementById('save-note-edit').addEventListener('click', () => {
     const newNote = document.getElementById('edit-note-textarea').value;
     document.getElementById('edit-task-note').value = newNote;
@@ -304,7 +317,7 @@ function dispararConfetes() {
     const duration = 1 * 1000;
     const end = Date.now() + duration;
 
-    const confettiInterval = setInterval(function() {
+    const confettiInterval = setInterval(function () {
         if (Date.now() > end) {
             return clearInterval(confettiInterval);
         }
@@ -324,3 +337,36 @@ function dispararConfetes() {
         });
     }, 200);
 }
+
+document.getElementById('filter-tasks').addEventListener('change', () => {
+    const filtro = document.getElementById('filter-tasks').value;
+    const taskList = document.querySelector('.task-list');
+    const tasks = Array.from(taskList.children);
+
+    let sortedTasks;
+
+    if (filtro === 'priority') {
+        const priorityOrder = { high: 1, medium: 2, low: 3 };
+        sortedTasks = tasks.sort((a, b) => {
+            const aPriority = priorityOrder[a.dataset.priority] || 99;
+            const bPriority = priorityOrder[b.dataset.priority] || 99;
+            return aPriority - bPriority;
+        });
+    } else if (filtro === 'deadline') {
+        sortedTasks = tasks.sort((a, b) => {
+            const deadlineA = new Date(a.querySelector('.task-deadline').textContent);
+            const deadlineB = new Date(b.querySelector('.task-deadline').textContent);
+            return deadlineA - deadlineB;
+        });
+    } else {
+        reorderTasks();
+        return;
+    }
+
+    taskList.innerHTML = '';
+    sortedTasks.forEach(task => {
+        const progress = parseInt(task.querySelector('.progress-fill').style.width) || 0;
+        task.classList.toggle('completed-task', progress === 100);
+        taskList.appendChild(task);
+    });
+});

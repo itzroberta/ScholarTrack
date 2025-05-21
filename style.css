@@ -599,3 +599,84 @@ body {
 .edit-note-btn:hover {
     background-color: #357ab7;
 }
+
+#filter-tasks {
+    padding: 8px 36px 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #333;
+    appearance: none; /* Remove estilo padrão do sistema */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23333' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+
+  #filter-tasks:hover {
+    border-color: #888;
+  }
+
+  #filter-tasks:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.2);
+  }
+
+  .task-filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .task-filter label {
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  #task-priority-input {
+  padding: 8px 36px 8px 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #333;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23333' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#open-edit-note-modal {
+  background-color: #d2e9ff;
+  border: 1px solid #414141;
+  color: #414141;
+  font-weight: 500;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 10px;
+}
+
+#open-edit-note-modal:hover {
+  background-color: #c1daf1;
+  color: #414141;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
