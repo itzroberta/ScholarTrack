@@ -261,15 +261,18 @@ textarea {
   }
 
 .modal-conteudo {
-  background-color: #fff;
-  margin: 5% auto;
-  padding: 20px;
-  width: 90%;
-  max-width: 600px;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
-  position: relative;
-  word-wrap: break-word;
+  background-color: #ffffff;
+  border: 1px solid #414141;
+  color: #414141;
+  font-weight: 500;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  width: 60%;
+  max-width: 700px;
 }
 
 .modal-fechar {

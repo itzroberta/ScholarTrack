@@ -642,7 +642,6 @@ body {
 
   #task-priority-input {
   padding: 8px 36px 8px 12px;
-  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
   background-color: #f9f9f9;
@@ -662,7 +661,7 @@ body {
 }
 
 #open-edit-note-modal {
-  background-color: #d2e9ff;
+  background-color: #ffffff;
   border: 1px solid #414141;
   color: #414141;
   font-weight: 500;
@@ -672,11 +671,10 @@ body {
   font-size: 14px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  margin-bottom: 10px;
 }
 
 #open-edit-note-modal:hover {
-  background-color: #c1daf1;
+  background-color: #f7f7f7;
   color: #414141;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
