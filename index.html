@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
-    /* Estilo do modal */
     .modal {
       position: fixed;
       z-index: 9999;
@@ -67,7 +66,7 @@
       <input type="text" id="task-name-input" placeholder="Task's Title">
       <input type="date" id="task-deadline-input">
       <button type="button" id="open-edit-note-modal" class="btn btn-secondary">Click to add notes</button>
-      <input type="hidden" id="edit-task-note" name="note"> <!-- aqui ficará o texto salvo -->
+      <input type="hidden" id="edit-task-note" name="note">
       <select id="task-priority-input" placeholder="Filter Priority">
         <option value="1">High</option>
         <option value="2">Medium</option>
@@ -83,11 +82,9 @@
     </div>
 
     <div id="task-list" class="task-list">
-      <!-- Tarefas serão adicionadas aqui via JavaScript -->
     </div>
   </main>
 
-  <!-- Modal para mostrar anotações -->
   <div id="note-modal" class="modal" style="display: none;">
     <div class="modal-content">
       <span id="close-modal" class="close">&times;</span>
@@ -107,7 +104,6 @@
   </div>
 
   <script>
-    // Função para exibir o modal de anotações
     function showNoteModal(noteText) {
       const modal = document.getElementById('note-modal');
       const content = document.getElementById('modal-note-content');

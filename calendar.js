@@ -5,9 +5,8 @@ const currentYear = today.year();
 const daysInMonth = dayjs().daysInMonth();
 const todayKey = `${currentYear}-${currentMonth + 1}-${today.date()}`;
 
-// Função para renderizar o calendário
 function renderCalendar() {
-  calendarEl.innerHTML = ""; // limpa o conteúdo anterior
+  calendarEl.innerHTML = "";
 
   const calendarGrid = document.createElement("div");
   calendarGrid.classList.add("calendar-grid");
@@ -51,10 +50,8 @@ function renderCalendar() {
 
 renderCalendar();
 
-// Botão de check-in
 const checkinBtn = document.getElementById("checkin-btn");
 
-// Verifica se já foi feito o check-in hoje
 const alreadyCheckedIn = localStorage.getItem(todayKey) === "true";
 
 if (alreadyCheckedIn) {

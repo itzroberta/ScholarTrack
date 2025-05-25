@@ -1,26 +1,81 @@
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f9f9f9;
-    padding: 2rem;
-    color: #333;
-  }
-  
-  h1 {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  ul#concluidos-list {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  ul#concluidos-list li {
-    background-color: #e6fff2;
-    border-left: 5px solid #28a745;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    font-weight: bold;
-  }
+  font-family: 'Inter', sans-serif;
+  background-color: #f9f9f9;
+  padding: 2rem;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+ul#concluidos-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: flex-start;
+}
+
+ul#concluidos-list li {
+  background-color: #e7ffec;
+  border-left: 6px solid #28a745;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+}
+
+.task-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.completion-date {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 0.5rem;
+  font-weight: normal;
+}
+
+.completed-task-box {
+  background-color: #fff8dc;
+  border: 1px solid #e0d6b4;
+  border-radius: 8px;
+  padding: 20px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  background-image: linear-gradient(to bottom, #fefefe 19px, transparent 19px),
+                    linear-gradient(to right, #f3e7c6 1px, transparent 1px);
+  background-size: 100% 20px, 20px 100%;
+}
+
+.task-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.completed-date {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+}

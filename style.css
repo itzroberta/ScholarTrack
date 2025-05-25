@@ -159,7 +159,7 @@ h1 {
 }
 
 .task-item {
-    border-bottom: 1px solid #ccc; /* Barrinha cinza separadora */
+    border-bottom: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 10px;
 }
@@ -531,7 +531,7 @@ body {
     max-height: 70vh;
     overflow-y: auto;
     word-wrap: break-word;
-    white-space: pre-wrap; /* mantém quebras de linha do texto */
+    white-space: pre-wrap;
     box-shadow: 0 0 15px rgba(0,0,0,0.3);
     position: relative;
 }
@@ -608,7 +608,7 @@ body {
     font-family: 'Inter', sans-serif;
     font-size: 14px;
     color: #333;
-    appearance: none; /* Remove estilo padrão do sistema */
+    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23333' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");

@@ -268,7 +268,7 @@ textarea {
   padding: 10px 16px;
   border-radius: 6px;
   font-family: 'Inter', sans-serif;
-  font-size: 17px;
+  font-size: 16px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   width: 60%;
@@ -303,7 +303,6 @@ textarea {
   animation: bounce 1.2s infinite alternate;
 }
 
-/* Animação opcional para dar vida ao emoji */
 @keyframes bounce {
   from { transform: translateY(0); }
   to   { transform: translateY(-5px); }

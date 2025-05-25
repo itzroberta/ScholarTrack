@@ -1,4 +1,3 @@
-/* ===== Base ===== */
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -6,7 +5,6 @@ body {
   display: flex;
 }
 
-/* ===== Sidebar (fixa à esquerda) ===== */
 .sidebar {
   width: 220px;
   height: 100vh;
@@ -45,9 +43,8 @@ body {
   color: white;
 }
 
-/* ===== Conteúdo principal ===== */
 .content {
-  margin-left: 220px; /* espaço para a sidebar */
+  margin-left: 220px;
   flex: 1;
   min-height: 100vh;
   display: flex;
@@ -58,14 +55,12 @@ body {
   box-sizing: border-box;
 }
 
-/* ===== Título ===== */
 h1 {
   margin-bottom: 20px;
   color: #333;
   font-size: 28px;
 }
 
-/* ===== Botão voltar (caso use) ===== */
 .voltar {
   display: block;
   margin-bottom: 20px;
@@ -74,7 +69,6 @@ h1 {
   font-weight: bold;
 }
 
-/* ===== Calendário ===== */
 #calendar {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -99,21 +93,18 @@ h1 {
   text-align: center;
 }
 
-/* Dias marcados */
 .day.marked,
 .day-cell.completed {
-  background-color: #a3e635; /* verde limão */
+  background-color: #a3e635;
   color: #000;
   font-weight: bold;
   border: 2px solid #6b46c1;
 }
 
-/* Impede clique nos dias */
 #calendar .day {
   pointer-events: none;
 }
 
-/* ===== Botão de check-in ===== */
 #checkin-btn {
   padding: 12px 24px;
   font-size: 16px;
@@ -132,11 +123,11 @@ h1 {
 }
 
 .main-content {
-  margin-left: 180px; /* para compensar a sidebar fixa */
+  margin-left: 180px;
   padding: 40px 20px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* centraliza horizontalmente */
+  align-items: center;
   text-align: center;
 }
 
@@ -146,5 +137,5 @@ h1 {
 }
 
 #calendar {
-  margin-left: 100px; /* ajuste fino */
+  margin-left: 100px;
 }

@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const encerramentoInput = document.getElementById('encerramento');
     const anotacaoInput = document.getElementById('edital-anotacao-input');
   
-    // Criar o modal uma vez e reaproveitar
     const modal = document.createElement('div');
     modal.id = 'modal-anotacao';
     modal.style.cssText = `
@@ -63,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="edital-topo">
             <div>
               <strong>${edital.nome}</strong>
-              <div class="edital-datas">Abertura: ${edital.abertura} | Encerramento: ${edital.encerramento}</div>
+              <div class="edital-datas">Opening: ${edital.abertura} | Deadline: ${edital.encerramento}</div>
             </div>
             <div class="edital-dias">${calcularDiasRestantes(edital.encerramento)}</div>
           </div>

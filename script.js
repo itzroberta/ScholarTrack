@@ -45,16 +45,27 @@ saveTaskBtn.addEventListener('click', () => {
     newTaskForm.style.display = 'none';
 });
 
-function createTask(taskName, taskDeadline, progress, note = '', priority = 'medium') {
+function formatDateToEnglish(dateStr) {
+    const date = new Date(dateStr);
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    const year = date.getFullYear();
+    return `${month}/${day}/${year}`;
+}
+
+function createTask(taskName, taskDeadline, progress, note = '', priority = 'medium', completedAt = null) {
     const taskList = document.querySelector('.task-list');
 
     const newTaskItem = document.createElement('div');
     newTaskItem.className = 'task-item';
     newTaskItem.dataset.priority = priority;
+    newTaskItem.dataset.note = note;
+    if (completedAt) newTaskItem.dataset.completedAt = completedAt;
+
     newTaskItem.innerHTML = `
         <div class="task-info">
             <span class="task-name">${taskName}</span>
-            <span class="task-deadline">${taskDeadline}</span>
+            <span class="task-deadline">${formatDateToEnglish(taskDeadline)}</span>
             <span class="task-priority">Priority: ${priority}</span>
         </div>
         <div class="progress-container">
@@ -73,7 +84,6 @@ function createTask(taskName, taskDeadline, progress, note = '', priority = 'med
         </div>
     `;
 
-    newTaskItem.dataset.note = note;
     taskList.appendChild(newTaskItem);
 
     activateProgressButtons(newTaskItem);
@@ -92,6 +102,7 @@ function activateProgressButtons(taskItem) {
     decreaseBtn.addEventListener('click', () => {
         current = Math.max(0, current - 5);
         fillDiv.style.width = `${current}%`;
+        taskItem.dataset.completedAt = current === 100 ? new Date().toISOString() : '';
         saveTasks();
         updateSummary();
         reorderTasks();
@@ -102,14 +113,14 @@ function activateProgressButtons(taskItem) {
         const wasNotComplete = current < 100;
         current = Math.min(100, current + 5);
         fillDiv.style.width = `${current}%`;
+        if (current === 100 && wasNotComplete) {
+            dispararConfetes();
+            taskItem.dataset.completedAt = new Date().toISOString();
+        }
         saveTasks();
         updateSummary();
         reorderTasks();
         registrarProgressoDiario();
-
-        if (current === 100 && wasNotComplete) {
-            dispararConfetes();
-        }
     });
 }
 
@@ -130,8 +141,8 @@ function activateActions(taskItem) {
 
         const taskDeadlineInput = document.createElement('input');
         taskDeadlineInput.type = 'date';
-        taskDeadlineInput.value = taskDeadlineSpan.innerText;
-        taskDeadlineInput.className = 'edit-input';
+        const parsedDate = new Date(taskDeadlineSpan.innerText);
+        taskDeadlineInput.value = parsedDate.toISOString().split('T')[0];
 
         const prioritySelect = document.createElement('select');
         prioritySelect.innerHTML = `
@@ -221,7 +232,7 @@ function activateActions(taskItem) {
 function showNoteModal(noteText) {
     const modal = document.getElementById('note-modal');
     const content = document.getElementById('modal-note-content');
-    content.textContent = noteText || 'Sem anotações.';
+    content.textContent = noteText || 'There are no notes.';
     modal.style.display = 'block';
 
     window.onclick = function (event) {
@@ -239,11 +250,13 @@ function saveTasks() {
     const tasks = [];
     document.querySelectorAll('.task-item').forEach(task => {
         const name = task.querySelector('.task-name')?.textContent || '';
-        const deadline = task.querySelector('.task-deadline')?.textContent || '';
+        const deadlineText = task.querySelector('.task-deadline')?.textContent || '';
+        const deadline = new Date(deadlineText).toISOString().split('T')[0]; // yyyy-mm-dd
         const note = task.dataset.note || '';
         const priority = task.dataset.priority || 'medium';
         const progress = parseInt(task.querySelector('.progress-fill').style.width) || 0;
-        tasks.push({ name, deadline, progress, note, priority });
+        const completedAt = task.dataset.completedAt || null;
+        tasks.push({ name, deadline, progress, note, priority, completedAt });
     });
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
@@ -254,7 +267,7 @@ function loadTasks() {
 
     tasks.forEach(task => {
         if (!onlyCompleted || task.progress === 100) {
-            createTask(task.name, task.deadline, task.progress, task.note || '', task.priority);
+            createTask(task.name, task.deadline, task.progress, task.note || '', task.priority, task.completedAt);
         }
     });
 }
