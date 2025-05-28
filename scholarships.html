@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scholarships | ScholarTrack</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="scholarships.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    <aside class="sidebar">
+        <h2>🎓 Scholartrack</h2>
+        <nav>
+            <a href="index.html"><i class="fas fa-tasks"></i> Tasks</a>
+            <a href="editais.html"><i class="fas fa-file-alt"></i> Applications</a>
+            <a href="concluidos.html"><i class="fas fa-check-circle"></i> Completed</a>
+            <a href="calendario.html"><i class="fas fa-calendar-alt"></i> Calendar</a>
+            <a href="scholarships.html"><i class="fas fa-graduation-cap"></i> Scholarships</a>
+        </nav>
+    </aside>
+
+    <h1>🎓 Scholarships Database</h1>
+
+    <main style="margin-left: 250px; padding: 20px;">
+
+        <div class="filters">
+            <select id="filterPais">
+                <option value="">🌍 All Countries</option>
+            </select>
+            <select id="filterNivel">
+                <option value="">🎓 All Levels</option>
+            </select>
+            <select id="filterArea">
+                <option value="">📚 All Areas</option>
+            </select>
+        </div>
+
+        <div class="scholarship-list" id="scholarship-list">
+        </div>
+    </main>
+
+    <script src="scholarships.js"></script>
+</body>
+</html>

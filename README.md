@@ -4,7 +4,8 @@
 [![Status](https://img.shields.io/badge/status-beta-yellow)]()
 [![Made With HTML/CSS/JS](https://img.shields.io/badge/Made%20with-HTML%2FCSS%2FJS-orange)]()
 
-> A clean and intuitive task organizer designed for scholarship applicants to stay on track with deadlines, requirements, and progress.
+> ScholarTrack is a clean and intuitive task organizer built specifically for scholarship applicants.  
+> Stay ahead of deadlines, track your progress visually, and stay organized — all in one place!
 
 ---
 
@@ -15,6 +16,13 @@
 - ✅ Track completed tasks and overall progress.
 - 📊 Live summary panel with stats.
 - 🎨 Smooth animations and responsive design.
+
+---
+
+## 💻 Requirements
+
+- Modern web browser (Chrome, Firefox, Edge, Safari)
+- No installation or backend required
 
 ---
 
@@ -46,6 +54,12 @@ scholartrack/
 ├── concluidos.html   # Completed tasks page
 └── README.md         # You are here!
 ```
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! If you find bugs or have suggestions, feel free to open an issue or a pull request.
 
 ---
 

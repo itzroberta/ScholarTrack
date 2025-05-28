@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Chevening Scholarships",
+    "country": "United Kingdom",
+    "eligible_nationalities": "All countries",
+    "level": "Master's",
+    "fields": "Any",
+    "deadline": "November (annual)",
+    "website": "https://www.chevening.org/"
+  },
+  {
+    "name": "DAAD Scholarships",
+    "country": "Germany",
+    "eligible_nationalities": "Developing countries",
+    "level": "Master's, PhD",
+    "fields": "Various",
+    "deadline": "Varies by program",
+    "website": "https://www.daad.de/en/"
+  },
+  {
+    "name": "Erasmus Mundus Joint Masters",
+    "country": "Multiple (EU)",
+    "eligible_nationalities": "All countries",
+    "level": "Master's",
+    "fields": "Various",
+    "deadline": "January–March",
+    "website": "https://www.eacea.ec.europa.eu/scholarships/emjmd-catalogue_en"
+  },
+  {
+    "name": "Fulbright Foreign Student Program",
+    "country": "United States",
+    "eligible_nationalities": "All countries",
+    "level": "Master's, PhD",
+    "fields": "Various",
+    "deadline": "Varies by country",
+    "website": "https://foreign.fulbrightonline.org/"
+  },
+  {
+    "name": "MEXT Scholarship",
+    "country": "Japan",
+    "eligible_nationalities": "All countries",
+    "level": "Undergraduate, Master's, PhD",
+    "fields": "Various",
+    "deadline": "April–May (usually)",
+    "website": "https://www.studyinjapan.go.jp/en/"
+  },
+  {
+    "name": "Korean Government Scholarship Program (GKS)",
+    "country": "South Korea",
+    "eligible_nationalities": "All countries",
+    "level": "Undergraduate, Master's, PhD",
+    "fields": "Various",
+    "deadline": "February–March",
+    "website": "https://studyinkorea.go.kr/"
+  },
+  {
+    "name": "Australia Awards",
+    "country": "Australia",
+    "eligible_nationalities": "Selected countries (mostly Asia, Africa, Pacific)",
+    "level": "Master's, PhD",
+    "fields": "Priority fields by country",
+    "deadline": "May",
+    "website": "https://www.dfat.gov.au/people-to-people/australia-awards"
+  },
+  {
+    "name": "Swedish Institute Scholarships for Global Professionals (SISGP)",
+    "country": "Sweden",
+    "eligible_nationalities": "Selected countries",
+    "level": "Master's",
+    "fields": "Sustainable development, innovation, gender, etc.",
+    "deadline": "February",
+    "website": "https://si.se/en/apply/scholarships/swedish-institute-scholarships-for-global-professionals/"
+  },
+  {
+    "name": "ETH Zurich Excellence Scholarship",
+    "country": "Switzerland",
+    "eligible_nationalities": "All countries",
+    "level": "Master's",
+    "fields": "STEM and related fields",
+    "deadline": "December 15",
+    "website": "https://ethz.ch/en/studies/financial/scholarships/excellence-scholarship.html"
+  },
+  {
+    "name": "Knight-Hennessy Scholars",
+    "country": "United States (Stanford)",
+    "eligible_nationalities": "All countries",
+    "level": "Graduate (any discipline)",
+    "fields": "Any",
+    "deadline": "October",
+    "website": "https://knight-hennessy.stanford.edu/"
+  }
+]
