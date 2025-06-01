@@ -67,7 +67,7 @@
     "country": "Sweden",
     "eligible_nationalities": "Selected countries",
     "level": "Master's",
-    "fields": "Sustainable development, innovation, gender, etc.",
+    "fields": "Sustainable development, Innovation, Gender",
     "deadline": "February",
     "website": "https://si.se/en/apply/scholarships/swedish-institute-scholarships-for-global-professionals/"
   },
@@ -82,11 +82,191 @@
   },
   {
     "name": "Knight-Hennessy Scholars",
-    "country": "United States (Stanford)",
+    "country": "United States",
     "eligible_nationalities": "All countries",
     "level": "Graduate (any discipline)",
     "fields": "Any",
     "deadline": "October",
     "website": "https://knight-hennessy.stanford.edu/"
+  },
+  {
+    "name": "Eiffel Excellence Scholarship",
+    "country": "France",
+    "eligible_nationalities": "Non-French nationals",
+    "level": "Master's, PhD",
+    "fields": "Engineering, Law, Economics, Management, Political Science",
+    "deadline": "January 10, 2026",
+    "website": "https://www.campusfrance.org/en/eiffel-scholarship-program-of-excellence"
+  },
+  {
+    "name": "Commonwealth Shared Scholarships",
+    "country": "United Kingdom",
+    "eligible_nationalities": "Commonwealth countries",
+    "level": "Master's",
+    "fields": "Development-related fields",
+    "deadline": "December 20, 2025",
+    "website": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-shared-scholarships"
+  },
+  {
+    "name": "Rotary Peace Fellowships",
+    "country": "Various",
+    "eligible_nationalities": "All countries",
+    "level": "Master's, Certificate",
+    "fields": "Peace and Development",
+    "deadline": "May 15, 2026",
+    "website": "https://www.rotary.org/en/our-programs/peace-fellowships"
+  },
+  {
+    "name": "Orange Knowledge Programme",
+    "country": "Netherlands",
+    "eligible_nationalities": "Selected countries",
+    "level": "Short courses, Master's",
+    "fields": "Development-related fields",
+    "deadline": "Varies per institution",
+    "website": "https://www.studyinholland.nl/finances/orange-knowledge-programme"
+  },
+  {
+    "name": "Government of Ireland Postgraduate Scholarship",
+    "country": "Ireland",
+    "eligible_nationalities": "All countries",
+    "level": "Master's, PhD",
+    "fields": "All fields",
+    "deadline": "October 25, 2025",
+    "website": "https://research.ie/funding/goipg"
+  },
+  {
+    "name": "Hungarian Government Scholarship (Stipendium Hungaricum)",
+    "country": "Hungary",
+    "eligible_nationalities": "Selected countries",
+    "level": "Bachelor's, Master's, PhD",
+    "fields": "Various fields",
+    "deadline": "January 15, 2026",
+    "website": "https://stipendiumhungaricum.hu/"
+  },
+  {
+    "name": "VLIR-UOS Scholarships",
+    "country": "Belgium",
+    "eligible_nationalities": "Selected developing countries",
+    "level": "Master's, Training",
+    "fields": "Development-related fields",
+    "deadline": "Varies by program",
+    "website": "https://www.vliruos.be/"
+  },
+  {
+    "name": "Turkiye Burslari (Türkiye Scholarships)",
+    "country": "Turkey",
+    "eligible_nationalities": "All countries",
+    "level": "Bachelor's, Master's, PhD",
+    "fields": "All fields",
+    "deadline": "February 20, 2026",
+    "website": "https://www.turkiyeburslari.gov.tr/"
+  },
+  {
+    "name": "Swiss Government Excellence Scholarships",
+    "country": "Switzerland",
+    "eligible_nationalities": "Selected countries",
+    "level": "Research, PhD, Postdoc",
+    "fields": "All fields",
+    "deadline": "Varies per country",
+    "website": "https://www.sbfi.admin.ch/sbfi/en/home/services/scholarships/swiss-government-excellence-scholarships.html"
+  },
+  {
+    "name": "Aga Khan Foundation International Scholarship Programme",
+    "country": "Multiple",
+    "eligible_nationalities": "Selected developing countries",
+    "level": "Master's, PhD",
+    "fields": "Various fields",
+    "deadline": "March 31, 2026",
+    "website": "https://www.akdn.org/our-agencies/aga-khan-foundation/international-scholarship-programme"
+  },
+  {
+    "name": "Joint Japan/World Bank Graduate Scholarship Program",
+    "country": "Multiple",
+    "eligible_nationalities": "Developing countries",
+    "level": "Master's",
+    "fields": "Development-related fields",
+    "deadline": "February 28, 2026",
+    "website": "https://www.worldbank.org/en/programs/scholarships"
+  },
+  {
+    "name": "ADB-Japan Scholarship Program",
+    "country": "Asia-Pacific",
+    "eligible_nationalities": "ADB member countries",
+    "level": "Master's",
+    "fields": "Economics, Management, Science & Technology",
+    "deadline": "Varies by institution",
+    "website": "https://www.adb.org/work-with-us/careers/japan-scholarship-program"
+  },
+  {
+    "name": "Italian Government Scholarships for Foreign Students",
+    "country": "Italy",
+    "eligible_nationalities": "All countries",
+    "level": "Master's, PhD, Research",
+    "fields": "Various fields",
+    "deadline": "June 9, 2025",
+    "website": "https://studyinitaly.esteri.it/en/"
+  },
+  {
+    "name": "Lester B. Pearson International Scholarship Program",
+    "country": "Canada",
+    "eligible_nationalities": "International students",
+    "level": "Bachelor's",
+    "fields": "All fields",
+    "deadline": "January 15, 2026",
+    "website": "https://future.utoronto.ca/pearson/about/"
+  },
+  {
+    "name": "Canadian Francophonie Scholarship Program (CFSP)",
+    "country": "Canada",
+    "eligible_nationalities": "Francophone developing countries",
+    "level": "Master's, PhD",
+    "fields": "Various fields",
+    "deadline": "Depends on local partner agencies",
+    "website": "https://www.boursesfrancophonie.ca/"
+  },
+  {
+    "name": "Mandela Rhodes Scholarship",
+    "country": "South Africa",
+    "eligible_nationalities": "African countries",
+    "level": "Master's",
+    "fields": "All fields",
+    "deadline": "April 21, 2026",
+    "website": "https://www.mandelarhodes.org/"
+  },
+  {
+    "name": "Cambridge International Scholarships",
+    "country": "United Kingdom",
+    "eligible_nationalities": "International students",
+    "level": "PhD",
+    "fields": "All fields",
+    "deadline": "December 1, 2025",
+    "website": "https://www.cambridgetrust.org/scholarships/"
+  },
+  {
+    "name": "Clarendon Fund Scholarships",
+    "country": "United Kingdom",
+    "eligible_nationalities": "All countries",
+    "level": "Master's, DPhil",
+    "fields": "All fields",
+    "deadline": "January 6, 2026",
+    "website": "https://www.ox.ac.uk/clarendon"
+  },
+  {
+    "name": "University of Sydney International Scholarship",
+    "country": "Australia",
+    "eligible_nationalities": "All countries",
+    "level": "Master's by Research, PhD",
+    "fields": "All fields",
+    "deadline": "Open year-round",
+    "website": "https://www.sydney.edu.au/scholarships/e/university-of-sydney-international-scholarship.html"
+  },
+  {
+    "name": "Gates Cambridge Scholarships",
+    "country": "United Kingdom",
+    "eligible_nationalities": "All countries outside the UK",
+    "level": "PhD, Master's (limited)",
+    "fields": "All fields",
+    "deadline": "December 4, 2025",
+    "website": "https://www.gatescambridge.org/"
   }
 ]
