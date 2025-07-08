@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Application Management System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="applications.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <div class="titulo-editais">
+    <span class="emoji">📄</span>
+    <h1>Applications</h1>
+  </div>
+
+  <aside class="sidebar">
+    <h2>🎓 Scholartrack</h2>
+    <nav>
+      <a href="index.html"><i class="fas fa-tasks"></i> Tasks</a>
+      <a href="applications.html"><i class="fas fa-file-alt"></i> Applications</a>
+      <a href="finished.html"><i class="fas fa-check-circle"></i> Completed</a>
+      <a href="calendar.html"><i class="fas fa-calendar-alt"></i> Calendar</a>
+      <a href="scholarships.html"><i class="fas fa-graduation-cap"></i> Scholarships</a>
+    </nav>
+  </aside>
+
+  <form id="form-edital">
+    <div class="campo-form">
+      <label for="nome">Scholarship's Name:</label>
+      <input type="text" id="nome" placeholder="Ex: GKS, MEXT..." required />
+    </div>
+  
+    <div class="campo-form">
+      <label for="abertura">Application Opening Date:</label>
+      <input type="date" id="abertura" required />
+    </div>
+  
+    <div class="campo-form">
+      <label for="encerramento">Application Deadline:</label>
+      <input type="date" id="encerramento" required />
+    </div>
+  
+    <div class="campo-form">
+      <label for="edital-anotacao-input">Notes (optional):</label>
+      <textarea id="edital-anotacao-input" placeholder="e.g., Documents not yet submitted..."></textarea>
+    </div>
+  
+    <div class="form-actions">
+      <button type="submit">Add Application</button>
+    </div>
+  </form>
+
+  <ul id="lista-editais"></ul>
+
+  <script src="editais.js"></script>
+</body>
+</html>

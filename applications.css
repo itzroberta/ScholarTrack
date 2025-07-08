@@ -1,0 +1,313 @@
+* {
+  font-family: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f5f7fa;
+  margin: 0;
+  padding: 2rem 1rem 2rem 240px;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  flex-wrap: wrap;
+}
+
+form textarea {
+  grid-column: span 4;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  min-height: 80px;
+}
+
+input, button {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+ul#lista-editais {
+  list-style-type: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+ul#lista-editais li {
+  background-color: #ffffff;
+  padding: 1.2rem;
+  margin-bottom: 1.2rem;
+  border-left: 6px solid #4f46e5;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease;
+}
+
+ul#lista-editais li:hover {
+  transform: translateY(-3px);
+}
+
+.edital-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.edital-topo strong {
+  font-size: 1.1em;
+  color: #222;
+}
+
+.edital-datas {
+  color: #666;
+  margin-top: 0.3rem;
+  font-size: 0.95em;
+}
+
+.edital-dias {
+  font-style: italic;
+  color: #4f46e5;
+  font-weight: 600;
+  font-size: 0.95em;
+}
+
+.edital-anotacao {
+  margin-top: 0.8rem;
+  font-size: 0.95em;
+  color: #555;
+  background-color: #f1f5f9;
+  padding: 10px;
+  border-left: 4px solid #cbd5e1;
+  border-radius: 6px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.campo-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo-form label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-actions button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.form-actions button:hover {
+  background-color: #0056b3;
+}
+
+.edital-botoes {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.edital-botoes button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-editar {
+  background-color: #ffde7a;
+  color: #000;
+}
+
+.btn-editar:hover {
+  background-color: #f0c955;
+}
+
+.btn-excluir {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-excluir:hover {
+  background-color: #c82333;
+}
+
+.edital-anotacao {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.ver-mais {
+  display: inline-block;
+  margin-top: 5px;
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+#modal-anotacao {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+}
+
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background-color: #4f46e5;
+  color: white;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+  
+.sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: #fff;
+}
+  
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+  
+.sidebar a {
+  color: #e0e7ff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+  
+.sidebar a:hover {
+  background-color: #6366f1;
+  color: white;
+}
+
+.modal-conteudo {
+  background-color: #ffffff;
+  border: 1px solid #414141;
+  color: #414141;
+  font-weight: 500;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  width: 60%;
+  max-width: 700px;
+}
+
+.modal-fechar {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-fechar:hover {
+  color: #000;
+}
+
+.titulo-editais {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  padding: 1.5rem 0;
+}
+
+.titulo-editais .emoji {
+  font-size: 2rem;
+  animation: bounce 1.2s infinite alternate;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-5px); }
+}
